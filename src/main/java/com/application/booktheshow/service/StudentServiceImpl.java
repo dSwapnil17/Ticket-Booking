@@ -1,5 +1,6 @@
 package com.application.booktheshow.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +36,16 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public Optional<Student> getStudentByStudentId(Long studentId) {
         return studentRepository.findByStudentId(studentId);
+    }
+
+    @Override
+    public boolean checkDateOfBirth(LocalDate dateOfBirth) {
+        return studentRepository.existsByDateOfBirth(dateOfBirth);
+    }
+
+    @Override
+    public boolean validateStudent(Long studentId, LocalDate dateOfBirth) {
+        return studentRepository.existsByStudentIdAndDateOfBirth(studentId, dateOfBirth);
     }
 
 }

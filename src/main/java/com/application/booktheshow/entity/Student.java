@@ -1,5 +1,7 @@
 package com.application.booktheshow.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +29,6 @@ public class Student {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "mail", nullable = false)
-    private String mail;
+    @Column(name = "dateOfBirth", nullable = false)
+    private LocalDate dateOfBirth;
 }
